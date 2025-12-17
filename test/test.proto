@@ -14,7 +14,7 @@ extend google.protobuf.FieldOptions {
 
 // supported proto types: uint32, uint64, bool, bytes, string. this list is from
 // generator.pbType2Str keys. generated sol code has the same type.
-// supported soltype values: uint8, address, bytes32, uint256, uint
+// supported soltype values: uint8, address, bytes32, uint256, uint256
 // each value requires specific proto type, see generator.SolTypeMap
 // embedded msg is supported
 message Msg1 {  // only native types
@@ -41,8 +41,8 @@ message Msg2 {  // use soltype
   repeated bytes addr_payables = 8 [ (soltype) = "address payable" ];
   repeated bytes amts = 9 [ (soltype) = "uint256" ];
   repeated bytes hashes = 10 [ (soltype) = "bytes32" ];
-  uint64 ts = 11 [ (soltype) = "uint" ];
-  repeated uint64 tss = 12 [ (soltype) = "uint" ];
+  uint64 ts = 11 [ (soltype) = "uint256" ];
+  repeated uint64 tss = 12 [ (soltype) = "uint256" ];
 }
 
 message Msg3 {  // embedded msgs

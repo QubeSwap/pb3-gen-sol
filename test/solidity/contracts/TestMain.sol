@@ -37,21 +37,21 @@ contract TestMain {
     event Msg2Part2(
         uint256[] amts,
         bytes32[] hs,
-        uint ts,
-        uint[] tss
+        uint256 ts,
+        uint256[] tss
     );
 
     event Msg4Info(
-        uint enum1,
-        uint enum2,
-        uint[] enums
+        uint256 enum1,
+        uint256 enum2,
+        uint256[] enums
     );
 
     event DecodedB (
         uint64 i,
-        uint alistlen,
+        uint256 alistlen,
         PbA.MyEnum e,
-        uint elistlen
+        uint256 elistlen
     );
 
     function testMsg1(bytes memory raw) public {
@@ -219,12 +219,12 @@ contract TestMain {
     function testMsg4(bytes memory raw) public {
         PbMytest.Msg4 memory m = PbMytest.decMsg4(raw);
 
-        uint[] memory uintEnums = new uint[](m.enums.length);
-        for (uint i = 0; i < uintEnums.length; i++) { uintEnums[i] = uint(m.enums[i]); }
+        uint256[] memory uintEnums = new uint256[](m.enums.length);
+        for (uint256 i = 0; i < uintEnums.length; i++) { uintEnums[i] = uint256(m.enums[i]); }
 
         emit Msg4Info(
-            uint(m.enum1),
-            uint(m.enum2),
+            uint256(m.enum1),
+            uint256(m.enum2),
             uintEnums
         );
     }
