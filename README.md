@@ -30,9 +30,20 @@ Check .proto files under test folder for more examples.
 Run
 
 ```bash
-$ go build -o protoc-gen-sol
-$ export PATH=$PWD:$PATH
-$ protoc --sol_out=. [list of proto files]
+#First DO:
+export GOBIN=$HOME/go/bin; export GOPATH=$HOME/go; export PATH=$PATH:$GOBIN
+
+Clone:
+https://github.com/qubeswap/pb3-gen-sol ---> In $GOPATH/src/github.com/qubeswap/
+
+cd $GOPATH/src/github.com/qubeswap/pb3-gen-sol
+
+
+Run:
+go build -o protoc-gen-sol
+
+Then:
+mv protoc-gen-sol $GOBIN
 ```
 
 proto files can have different package names, and generated .sol file name is proto package name.
