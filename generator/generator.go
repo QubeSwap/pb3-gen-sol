@@ -202,7 +202,7 @@ func (g *Generator) GenerateAllFiles() {
 	if g.importpb {
 		g.Response.File = append(g.Response.File, &plugin.CodeGeneratorResponse_File{
 			Name:    proto.String("Pb.sol"),
-			Content: proto.String("// SPDX-License-Identifier: GPL-3.0-only" + "pragma solidity " + SolVer + "\n" + ProtoSol),
+			Content: proto.String("// SPDX-License-Identifier: GPL-3.0-only" + "\n" + "\n" + "pragma solidity " + SolVer + "\n" + ProtoSol),
 		})
 	}
 }
