@@ -202,7 +202,7 @@ func (g *Generator) GenerateAllFiles() {
 	if g.importpb {
 		g.Response.File = append(g.Response.File, &plugin.CodeGeneratorResponse_File{
 			Name:    proto.String("Pb.sol"),
-			Content: proto.String("pragma solidity " + SolVer + "\n" + ProtoSol),
+			Content: proto.String("// SPDX-License-Identifier: GPL-3.0-only" + "pragma solidity " + SolVer + "\n" + ProtoSol),
 		})
 	}
 }
@@ -560,8 +560,6 @@ func toSolNaming(name *string) string {
 
 // ProtoSol is the full proto library, appended in the end of generated .sol file
 const ProtoSol = `
-// SPDX-License-Identifier: GPL-3.0-only
-
 // runtime proto sol library
 library Pb {
     enum WireType {
