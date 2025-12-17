@@ -30,7 +30,7 @@ Check .proto files under test folder for more examples.
 Run
 
 ```bash
-#First DO:
+First DO:
 export GOBIN=$HOME/go/bin; export GOPATH=$HOME/go; export PATH=$PATH:$GOBIN
 
 Clone:
